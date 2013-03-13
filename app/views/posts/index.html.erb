@@ -1,0 +1,35 @@
+<h1>Listing posts</h1>
+
+<table>
+  <tr>
+    <th>Creator</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Content</th>
+    <th>Cover</th>
+    <th>Category</th>
+    <th>Published at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.creator_id %></td>
+    <td><%= post.title %></td>
+    <td><%= post.description %></td>
+    <td><%= post.content %></td>
+    <td><%= post.cover %></td>
+    <td><%= post.category_id %></td>
+    <td><%= post.published_at %></td>
+    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Post', new_post_path %>
