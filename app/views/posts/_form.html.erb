@@ -12,10 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :creator_id %><br />
-    <%= f.text_field :creator_id %>
-  </div>
-  <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
@@ -33,11 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :category_id %><br />
-    <%= f.text_field :category_id %>
-  </div>
-  <div class="field">
-    <%= f.label :published_at %><br />
-    <%= f.datetime_select :published_at %>
+    <%=  f.select :category_id, @categories %>
   </div>
   <div class="actions">
     <%= f.submit %>

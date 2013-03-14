@@ -8,8 +8,13 @@ class User < ActiveRecord::Base
          :lockable, :timeoutable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name
   # attr_accessible :title, :body
 
-  has_many :posts
+  #validates :first_name, presence: true,
+  #                       length: {maximum: 20}
+  #validates :last_name, presence: true,
+  #                      length: {maximum: 20}
+
+  has_many :posts, class_name: "Post", foreign_key: "creator_id"
 end

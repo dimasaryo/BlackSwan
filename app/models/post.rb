@@ -11,6 +11,6 @@ class Post < ActiveRecord::Base
   validates :cover, length: {maximum: 256}
 
   belongs_to :category
-  belongs_to :creator, className: "User", foreign_key: "creator_id"
+  belongs_to :creator, class_name: "User", foreign_key: "creator_id"
 
 end
